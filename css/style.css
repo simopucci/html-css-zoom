@@ -1,3 +1,8 @@
+:root {
+    --header-height: 50px;
+    --footer-height: 70px;
+}
+
 /* *RESET */
 
 * {
@@ -7,7 +12,8 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif   ;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
 }
 
 /* *GENERAL */
@@ -21,7 +27,7 @@ body {
 /* *HEADER */
 
 #header {
-    height: 50px;
+    height: var(--header-height);
     background-color: black;
     text-align: right;
     padding: 5px;
@@ -30,9 +36,17 @@ body {
 #header button {
     color: white;
     background-color: #4A4A4B;
-    padding: 5px;
+    padding: 3px;
     border-radius: 5px;
-    text-align: center;
+    border: none;
+}
+
+#header button:hover {
+    cursor: pointer;
+}
+
+#header span {
+    font-size: x-small;
 }
 
 /* *MAIN */
@@ -40,9 +54,9 @@ body {
 .container__cam {
     overflow: auto;
     width: 90%;
-    margin: 20px auto;
-    padding: 5px;
-    height: calc(100vh - 50px - 100px);
+    margin: 0 auto;
+    padding: 20px 0;
+    height: calc(100vh - var(--header-height) - var(--footer-height));
     display: flex;
     justify-content: center;
     gap: 5px;
@@ -51,7 +65,7 @@ body {
 
 .cam {
     width: calc((100% / 7) - 5px);
-    min-width: 200px;
+    min-width: 150px;
     margin-bottom: 5px;
     position: relative;
 }
@@ -59,12 +73,16 @@ body {
 .cam img {
     width: 100%;
 }
+
+.cam img:hover {
+    cursor: pointer;
+}
+
 .cam span {
     position: absolute;
     left: 0;
     bottom: 5px;
     padding: 5px 5px;
-    color: white;
     font-size: smaller;
     background-color: rgba(89, 89, 89, 0.7);
 }
@@ -72,5 +90,58 @@ body {
 /* *FOOTER */
 
 #footer {
-    height: 100px;
+    height: var(--footer-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222222;
 }
+
+#footer .container__cell {
+    height: 80%;
+    width: calc(100% / 3);
+    padding: 10px;
+    display: flex;
+}
+
+#footer .container__cell:nth-of-type(2) {
+    width: 65%;
+}
+
+.container__cell i {
+    padding: 20px;
+    cur
+}
+
+.container__cell > div {
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container__cell > div:hover {
+    cursor: pointer;
+}
+
+.container__cell span {
+    font-size: x-small;
+}
+
+.container__cell .arrow__cell {
+    width: 20px;
+}
+
+#endmeeting__cell {
+    width: 100px;
+    height: 100%;
+    font-size: x-small;
+    color: red;
+    background-color: #4A4A4A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
