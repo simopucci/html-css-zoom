@@ -51,8 +51,11 @@ body {
 
 /* *MAIN */
 
-.container__cam {
+main {
     overflow: auto;
+}
+
+.container__cam {
     width: 90%;
     margin: 0 auto;
     padding: 20px 0;
